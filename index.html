@@ -2,10 +2,21 @@
 <html>
 <head>
 	<title>Formulaire de contact</title>
+	<script>
+		function validateForm() {
+		  var nom = document.forms["myForm"]["nom"].value;
+		  var email = document.forms["myForm"]["email"].value;
+		  var message = document.forms["myForm"]["message"].value;
+		  if (nom == "" || email == "" || message == "") {
+		    alert("Tous les champs doivent être remplis");
+		    return false;
+		  }
+		}
+	</script>
 </head>
 <body>
 	<h1>Formulaire de contact</h1>
-	<form>
+	<form name="myForm" onsubmit="return validateForm()">
 		<label for="nom">Nom:</label>
 		<input type="text" id="nom" name="nom"><br><br>
 		
