@@ -5,7 +5,7 @@ const email = document.querySelector('#email');
 const message = document.querySelector('#message');
 
 // Fonction de validation du formulaire
-function validerFormulaire(event) {
+const validerFormulaire = (event) => {
   event.preventDefault(); // Empêche l'envoi du formulaire par défaut
 
   // Vérification des champs requis
@@ -21,11 +21,11 @@ function validerFormulaire(event) {
     return;
   }
 
-  // Le formulaire est valide, affichage d'un message de succès
-  alert('Votre message a été envoyé avec succès !');
-  form.reset(); // Réinitialisation du formulaire
-}
+  // Envoi du formulaire si tout est OK
+  alert('Formulaire envoyé !');
+  form.reset();
+};
 
-// Ajout d'un écouteur d'événement sur la soumission du formulaire
+// Ajout de l'événement "submit" sur le formulaire
 form.addEventListener('submit', validerFormulaire);
 
