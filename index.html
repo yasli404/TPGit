@@ -1,31 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Formulaire de contact</title>
+	<style>
+		form {
+			width: 50%;
+			margin: auto;
+			font-size: 18px;
+			font-family: Arial, sans-serif;
+		}
+
+		label {
+			display: block;
+			margin-top: 10px;
+		}
+
+		input, textarea {
+			padding: 10px;
+			margin-top: 5px;
+			margin-bottom: 10px;
+			width: 100%;
+			box-sizing: border-box;
+			border-radius: 5px;
+			border: 1px solid gray;
+			font-size: 18px;
+			font-family: Arial, sans-serif;
+		}
+
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			margin-top: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 18px;
+			font-family: Arial, sans-serif;
+		}
+
+		button[type=reset] {
+			background-color: #f44336;
+		}
+
+		button[type=submit]:hover, button[type=reset]:hover {
+			background-color: #3e8e41;
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 36px;
+			font-family: Arial, sans-serif;
+		}
+	</style>
 	<script>
 		function validateForm() {
-			var nom = document.forms["myForm"]["nom"].value;
-			var email = document.forms["myForm"]["email"].value;
-			var message = document.forms["myForm"]["message"].value;
-			if (nom == "" || email == "" || message == "") {
-				alert("Tous les champs doivent être remplis");
-				return false;
-			}
+		  var nom = document.forms["myForm"]["nom"].value;
+		  var email = document.forms["myForm"]["email"].value;
+		  var message = document.forms["myForm"]["message"].value;
+		  if (nom == "" || email == "" || message == "") {
+		    alert("Tous les champs doivent être remplis");
+		    return false;
+		  }
 		}
 	</script>
 </head>
 <body>
 	<h1>Formulaire de contact</h1>
 	<form name="myForm" onsubmit="return validateForm()">
-		<label for="nom">Nom :</label>
-		<input type="text" id="nom" name="nom" required><br><br>
+		<label for="nom">Nom:</label>
+		<input type="text" id="nom" name="nom" required>
 		
-		<label for="email">Email :</label>
-		<input type="email" id="email" name="email" required><br><br>
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email" required>
 
-		<label for="message">Message :</label>
-		<textarea id="message" name="message" required></textarea><br><br>
+		<label for="message">Message:</label>
+		<textarea id="message" name="message" required></textarea>
 
 		<button type="submit">Envoyer</button>
 		<button type="reset">Effacer</button>
