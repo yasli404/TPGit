@@ -28,4 +28,3 @@ const validerFormulaire = (event) => {
 
 // Ajout de l'événement "submit" sur le formulaire
 form.addEventListener('submit', validerFormulaire);
-
